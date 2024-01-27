@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\PhotoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,10 +16,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/users', [TestController::class, 'getMethod']);
+
+/* /users */
+
+// Route::get('/users', [TestController::class, 'getMethod']);
+
+// Route::post('/users', [TestController::class, 'postMethod']);
 
 
-Route::post('/users', function(Request $request){
+Route::post('/photos', [PhotoController::class, 'store'])->middleware('App\Http\\Middleware\PhotoMiddleware');
 
-}); 
-Route::resource('/photos', 'PhotoController');
+//Route::resource('/photos', 'PhotoController');
+
+// Route::get('/env', function(){
+//     return response()->json(
+//         [
+//             'connection' => env('DB_CONNECTION'),
+//             'host' => env('DB_HOST'),
+//             'Port' => env('DB_PORT'),
+//             'database' => env('DB_DATABASE'),
+//             'username' => env('DB_USERNAME'),
+//             'pass' => env('DB_PASSWORD')
+//         ]
+//     );
+// });
