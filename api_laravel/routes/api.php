@@ -17,15 +17,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+
+
+
+
+
+
+
+
 /* /users */
 
 // Route::get('/users', [TestController::class, 'getMethod']);
 
 // Route::post('/users', [TestController::class, 'postMethod']);
 
-
-Route::post('/photos', [PhotoController::class, 'store'])->middleware('App\Http\\Middleware\PhotoMiddleware');
-Route::get('/photos', [PhotoController::class, 'index']);
+// Route::post('/photos', [PhotoController::class, 'store'])->middleware('App\Http\\Middleware\PhotoMiddleware');
+// Route::get('/photos', [PhotoController::class, 'index']);
 
 //Route::resource('/photos', 'PhotoController');
 
